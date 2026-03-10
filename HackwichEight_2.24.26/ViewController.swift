@@ -11,6 +11,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 {
     let myFriendsArray = ["Rachael", "Dakota", "Chayce", "Elena", "Haru"]
     
+    let myFriendsHomeArray = ["Kaneohe", "Kahala", "Kapolei", "Honolulu", "Mililani"]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //we want to return the same number of rows that equate to the exact number of elements in the array
         return myFriendsArray.count
@@ -21,6 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let text = myFriendsArray[indexPath.row]
+        //Problem set #2
+        cell.detailTextLabel?.text = myFriendsHomeArray[indexPath.row]
         
         cell.textLabel?.text = text
         
